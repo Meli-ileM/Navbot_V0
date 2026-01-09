@@ -1,0 +1,44 @@
+.sidebar {
+  width: 220px;
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.01)
+  );
+  backdrop-filter: blur(20px);
+  /* sidebar fixe sur toute la hauteur */
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+/* enlever le style de lien par défaut */
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* structure du li */
+.sidebar li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* état normal */
+.sidebar li span {
+  font-size: 14px;
+}
+
+/* hover + active (fond clair, texte blanc) */
+.sidebar a:hover li,
+.sidebar a.active li {
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1;
+}

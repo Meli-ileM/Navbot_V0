@@ -1,0 +1,33 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0f1b33, #070b14);
+  color: #ffffff;
+  min-height: 100vh;      /* au lieu de height */
+  overflow-y: auto;       /* autorise le scroll vertical */
+}
+
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+}
+
+.notif {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+.notif.warning { background: rgba(242,201,76,0.2); }
+.notif.success { background: rgba(39,174,96,0.2); }
+.notif.error { background: rgba(235,87,87,0.2); }

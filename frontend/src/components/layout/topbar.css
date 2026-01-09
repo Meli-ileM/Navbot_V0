@@ -1,0 +1,14 @@
+.topbar {
+  height: 60px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(14px);
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 16px;
+  opacity: 0.8;
+}
