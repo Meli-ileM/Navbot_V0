@@ -12,8 +12,8 @@ import Alerts from './pages/Alerts';
 import History from './pages/History';
 import Settings from './pages/Settings';
 import Profile from './pages/Profile';
-import Notifications from './pages/Notifications';
 import Telecommande from './pages/Telecommande';
+import MapView from './pages/MapView';
 
 
 export default function App() {
@@ -67,15 +67,15 @@ export default function App() {
           path="/profile"
           element={isAuthenticated ? <Profile /> : <Navigate to="/login" />}
         />
-        <Route
-          path="/notifications"
-          element={isAuthenticated ? <Notifications /> : <Navigate to="/login" />}
-        />
+        <Route 
+        path="mapview" 
+        element={isAuthenticated ? <MapView /> : <Navigate to="/login" />} 
+        />  
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" />} />
       
-
+                
     
         <Route path="teleop" element={<Telecommande />} />
 

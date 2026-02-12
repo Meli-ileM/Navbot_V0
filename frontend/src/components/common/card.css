@@ -1,13 +1,11 @@
 .card {
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.08),
-    rgba(255,255,255,0.02)
-  );
+  background: var(--card-bg);
   border-radius: 20px;
   padding: 20px;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
 }
 
 .card h4 {
@@ -15,6 +13,7 @@
   font-size: 15px;
   font-weight: 600;
   opacity: 0.85;
+  color: var(--text-secondary);
 }
 
 .status-row {
@@ -28,6 +27,7 @@
   gap: 8px;
   align-items: center;
   opacity: 0.85;
+  color: var(--text-secondary);
 }
 
 .card {
@@ -36,5 +36,39 @@
 
 .card:hover {
   transform: translateY(-4px);
+  box-shadow: var(--card-shadow);
+}
+
+:root[data-theme="dark"] .card:hover {
   box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+/* Tablet (481px - 768px) */
+@media (max-width: 768px) {
+  .card {
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  .card h4 {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile (< 480px) */
+@media (max-width: 480px) {
+  .card {
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  .card h4 {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+  }
 }

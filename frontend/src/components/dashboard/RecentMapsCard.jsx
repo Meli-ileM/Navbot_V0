@@ -1,11 +1,19 @@
+import { useNavigate } from 'react-router-dom';
 import Card from '../common/Card';
 
 export default function RecentMapsCard() {
+  const navigate = useNavigate();
+
   return (
     <Card title="Recent Maps" span={2}>
       <div style={styles.map}>
         <span>🗺️ Map Preview</span>
-        <button style={styles.button}>Export</button>
+        <button
+          style={styles.button}
+          onClick={() => navigate('/MapView')}
+        >
+          Export
+        </button>
       </div>
     </Card>
   );
@@ -19,7 +27,7 @@ const styles = {
     display: 'flex',
     alignItems: 'flex-end',
     justifyContent: 'space-between',
-    padding: '12px'
+    padding: '12px',
   },
   button: {
     background: '#2F80ED',
@@ -27,6 +35,6 @@ const styles = {
     border: 'none',
     borderRadius: '10px',
     padding: '8px 14px',
-    cursor: 'pointer'
-  }
+    cursor: 'pointer',
+  },
 };
