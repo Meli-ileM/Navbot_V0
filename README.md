@@ -71,14 +71,6 @@ http://localhost:5173
 
 ---
 
-##  Prochaines étapes
-
-* Développement du backend avec Node.js
-* Mise en place d’une API REST
-* Connexion frontend ↔ backend
-* Gestion des utilisateurs
-* Déploiement
-
 
 
 
