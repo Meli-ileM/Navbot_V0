@@ -1,6 +1,6 @@
 #  Navbot – Version 0
 
-Nacbot est une application web développée avec **Node.js** et **React.js**.
+Navbot est une application web développée avec **Node.js** et **React.js**.
 La version 0 contient uniquement le **frontend** (interface utilisateur).
 Le dossier `backend` est présent mais actuellement vide (en cours de développement).
 
