@@ -1,4 +1,4 @@
-#  Nacbot – Version 0
+#  Navbot – Version 0
 
 Nacbot est une application web développée avec **Node.js** et **React.js**.
 La version 0 contient uniquement le **frontend** (interface utilisateur).
@@ -18,7 +18,7 @@ Le dossier `backend` est présent mais actuellement vide (en cours de développe
 ##  Structure du projet
 
 ```
-Nacbot/
+Navbot_V0/
 │
 ├── frontend/        # Application React (Version 0 fonctionnelle)
 │
@@ -34,8 +34,7 @@ Nacbot/
 ### 1️ Cloner le projet
 
 ```bash
-git clone <url-du-repo>
-cd Nacbot
+cd Navbot_V0
 ```
 
 ### 2️ Aller dans le dossier frontend
