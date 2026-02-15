@@ -1,0 +1,395 @@
+:root {
+  --blue-dark: #081F5C;
+  --blue-medium: #24386E;
+  --blue-light: #546FA8;
+  --accent-blue-soft: #D4EBFF;
+  
+  /* Couleurs de données (Blue-only) */
+  --color-battery: #3b82f6; 
+  --color-temp: #60a5fa;   
+  --color-mode: #546FA8;   
+  --color-pos: #94a3b8;    
+}
+
+body.dark-mode {
+  --background-page: #040D1A;
+  --card-bg: rgba(8, 31, 92, 0.6);
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --border-color: rgba(212, 235, 255, 0.1);
+  --text-primary: #F8FAFC;
+  --text-secondary: #D4EBFF;
+  --text-tertiary: #94a3b8;
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+/* Remplacement du vert par le bleu ciel/moyen */
+.stat-total { border-left: 4px solid var(--blue-light); }
+.stat-online { border-left: 4px solid var(--accent-blue-soft); } 
+.stat-missions { border-left: 4px solid var(--blue-medium); }
+.stat-success { border-left: 4px solid #a855f7; }
+
+.stat-value { font-size: 24px; font-weight: 800; color: var(--text-primary); }
+.stat-label { font-size: 11px; text-transform: uppercase; color: var(--text-tertiary); }
+
+
+/* --- GRILLE DES ROBOTS --- */
+.robots-status-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.robot-status-card {
+  padding: 24px; /* Augmenté pour plus d'air */
+  border-radius: 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(8, 31, 92, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header : Nom et Badge séparés */
+.robot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Espace crucial sous le titre */
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--accent-blue-soft);
+}
+
+.robot-name {
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--blue-dark);
+}
+
+/* Liste des détails */
+.robot-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espace constant entre chaque ligne d'info */
+}
+
+.robot-info-line {
+  display: flex;
+  justify-content: space-between; /* Pousse la valeur à l'autre bout */
+  align-items: center;
+}
+
+.robot-info-line .label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+}
+
+.robot-info-line .value {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue-medium);
+  text-align: right;
+}
+
+/* Barre de batterie (Bleu NavBot) */
+.battery-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: rgba(84, 111, 168, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  /* Remplacement du vert par un dégradé de bleus */
+  background: linear-gradient(90deg, var(--blue-light), var(--blue-medium));
+  border-radius: 10px;
+}
+
+/* Badges de Statut (Remplacement du vert) */
+.robot-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.status-online { 
+  background: var(--accent-blue-soft); 
+  color: var(--blue-dark); /* Plus de vert ici */
+}
+
+.system-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.system-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.system-item:hover {
+  background: var(--accent-blue-soft);
+  border-color: var(--blue-light);
+}
+
+.system-item span:first-child {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-tertiary);
+}
+
+.system-value.online {
+  color: var(--blue-medium); /* Remplacement du vert */
+}
+
+
+.map-preview {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.preview-svg {
+  width: 100%;
+  background: #1a2332; /* Fond Gazebo World */
+}
+
+/* Style de l'indicateur TurtleBot sur la carte */
+.preview-svg circle { fill: var(--accent-blue-soft); }
+.preview-svg rect[stroke="#22c55e"] { stroke: var(--blue-light); } /* Change le périmètre vert en bleu */
+
+.map-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px;
+  background: var(--accent-blue-soft); /* Ton bleu ciel */
+  color: var(--blue-dark);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.alerts-panel { display: flex; flex-direction: column; gap: 12px; }
+
+.alert-item {
+  display: flex;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--card-bg);
+  overflow: hidden;
+}
+
+.alert-marker { width: 6px; flex-shrink: 0; }
+
+/* Niveaux d'alerte sans vert */
+.alert-info .alert-marker { background-color: var(--accent-blue-soft); }
+.alert-warning .alert-marker { background-color: #eab308; }
+.alert-error .alert-marker { background-color: #ef4444; }
+
+.alert-content { padding: 12px; }
+.alert-message { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+
+
+/* Container de la Card */
+.slider-container {
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+/* Le rail qui contient tous les robots du map */
+.robot-slider-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Chaque carte générée par le map */
+.robot-status-card {
+  flex: 0 0 calc(50% - 10px); /* Affiche 2 robots exactement */
+  min-width: 0; /* Évite les bugs de texte qui dépasse */
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid rgba(8, 31, 92, 0.1);
+  border-radius: 12px;
+}
+
+/* --- ÉVITER LE TEXTE COLLÉ --- */
+.robot-info-line {
+  display: flex;
+  justify-content: space-between; /* Pousse le texte aux deux extrémités */
+  align-items: center;
+  margin-bottom: 12px; /* Espace entre les lignes */
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #546FA8;
+}
+
+.value {
+  font-weight: 700;
+  color: #081F5C;
+}
+
+/* Barre de batterie aérée */
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0.6; /* Prend de la place pour ne pas coller au label */
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #24386E; /* Bleu NavBot au lieu du vert */
+}
+
+/* Flèches de navigation */
+.slider-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.slider-arrow {
+  background: #D4EBFF; /* Ton bleu ciel */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #081F5C;
+}
+
+/* Container principal */
+.missions-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 5px;
+}
+
+/* Carte de mission individuelle */
+.mission-item {
+  padding: 16px;
+  border: 1px solid rgba(84, 111, 168, 0.1);
+  border-radius: 12px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.mission-item:hover {
+  border-color: #D4EBFF;
+  box-shadow: 0 4px 12px rgba(8, 31, 92, 0.05);
+}
+
+/* Header : Titre + Badge */
+.mission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.mission-name {
+  color: #081F5C;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Badges de statut (Remplacement du vert) */
+.mission-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* Running -> Bleu ciel, Completed -> Bleu moyen, Queued -> Ambre */
+.status-running { background: #D4EBFF; color: #081F5C; }
+.status-completed { background: #24386E; color: #ffffff; }
+.status-queued { background: #FFF7ED; color: #C2410C; }
+
+/* Robot Info */
+.mission-robot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #546FA8;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+/* Barre de progression (Remplacement du vert par le bleu) */
+.mission-progress-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #F1F5F9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  /* Dégradé de bleu au lieu du vert de la capture */
+  background: linear-gradient(90deg, #546FA8, #081F5C);
+  border-radius: 10px;
+}
+
+.progress-percentage {
+  font-size: 12px;
+  font-weight: 600;
+  color: #546FA8;
+  min-width: 30px;
+}
