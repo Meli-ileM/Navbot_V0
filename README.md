@@ -79,13 +79,6 @@ http://localhost:5173
 * Gestion des utilisateurs
 * Déploiement
 
----
-
-##  Auteur
-
-Projet créé par MEDJBER Melissa
-Année : 2026
 
 
 
-Tu veux quel style ?
