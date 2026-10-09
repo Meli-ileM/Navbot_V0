@@ -17,6 +17,14 @@
 
 </div>
 
+## 🚀 Démo en ligne / Live demo
+
+👉 **[Tester NavBot / Try NavBot](https://claude.ai/code/artifact/a4aef068-cf85-4907-b96c-e52492a5d3e0)**
+
+> 🇫🇷 Version de démonstration en ligne avec données fictives, aucune installation nécessaire.
+>
+> 🇬🇧 Online demo version with mock data, no installation needed.
+
 ---
 
 ## 🇬🇧 English
