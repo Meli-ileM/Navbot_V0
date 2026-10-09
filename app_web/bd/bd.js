@@ -7,7 +7,7 @@ const configOptions = {
 };
 
 const connectToDB = async () => {
-  const connectionUrl = 'mongodb+srv://amirahamdi:j6rS2qQQOC1Q9Q1c@clusterdata.dsbshld.mongodb.net/?appName=ClusterData';
+  const connectionUrl = process.env.MONGODB_URI;
 
   try {
     await mongoose.connect(connectionUrl, configOptions);

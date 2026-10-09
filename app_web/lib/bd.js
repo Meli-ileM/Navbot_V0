@@ -1,10 +1,10 @@
 // lib/db.js
 import mongoose from "mongoose";
 
-const MONGO_URI = "mongodb+srv://amirahamdi:j6rS2qQQOC1Q9Q1c@clusterdata.dsbshld.mongodb.net/?appName=ClusterData";
+const MONGO_URI = process.env.MONGODB_URI;
 
 if (!MONGO_URI) {
-  throw new Error("Veuillez définir MONGO_URI dans lib/db.js");
+  throw new Error("Veuillez définir MONGODB_URI dans .env.local");
 }
 
 let cached = global.mongoose;

@@ -18,7 +18,7 @@ console.log("🚀 Script lancé");
    2️⃣ URI MongoDB
 ================================ */
 const MONGODB_URI =
-  "mongodb+srv://amirahamdi:j6rS2qQQOC1Q9Q1c@clusterdata.dsbshld.mongodb.net/?appName=ClusterData";
+  process.env.MONGODB_URI;
 
 /* ================================
    3️⃣ Fonction principale

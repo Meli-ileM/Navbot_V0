@@ -62,7 +62,7 @@ backend/    Reserved for the navigation backend
 # React interface
 cd frontend && npm install && npm run dev      # http://localhost:5173
 
-# Next.js web app
+# Next.js web app (copy app_web/.env.example to app_web/.env.local and set MONGODB_URI)
 cd app_web && npm install && npm run dev       # http://localhost:3000
 ```
 

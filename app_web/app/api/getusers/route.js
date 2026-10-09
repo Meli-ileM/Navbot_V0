@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.models.User || mongoose.model("User", userSchema);
 
 // 2️⃣ URI MongoDB
-const MONGODB_URI = "mongodb+srv://amirahamdi:j6rS2qQQOC1Q9Q1c@clusterdata.dsbshld.mongodb.net/?appName=ClusterData";
+const MONGODB_URI = process.env.MONGODB_URI;
 
 async function connectDB() {
   if (mongoose.connection.readyState >= 1) return;
